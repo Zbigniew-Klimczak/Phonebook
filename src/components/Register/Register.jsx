@@ -21,17 +21,24 @@ const Register = () => {
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
         Username
-        <input type="text" name="name" />
+        <input className={css.input} type="text" name="name" />
       </label>
       <label className={css.label}>
         Email
-        <input type="email" name="email" />
+        <input className={css.input} type="email" name="email" />
       </label>
       <label className={css.label}>
         Password
-        <input type="password" name="password" />
+        <input
+          className={css.input}
+          type="password"
+          name="password"
+          autoComplete="off"
+        />
       </label>
-      <button type="submit">Register</button>
+      <button className={css.button} type="submit">
+        Register
+      </button>
     </form>
   );
 };

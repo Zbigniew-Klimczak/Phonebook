@@ -7,19 +7,22 @@ const Navigation = () => {
   return (
     <div className={css.navContainer}>
       <h1>
-        <Link to="/">Phonebook</Link>
+        <Link className={css.title} to="/">
+          Phonebook
+        </Link>
       </h1>
       {isLoggedIn ? (
         <UserMenu />
       ) : (
-        <ul>
-          <li>
-            <Link to="/login">Log In</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-        </ul>
+        <div className={css.linkContainer}>
+          <Link className={css.link} to="/login">
+            Log In
+          </Link>
+
+          <Link className={css.link} to="/register">
+            Register
+          </Link>
+        </div>
       )}
     </div>
   );

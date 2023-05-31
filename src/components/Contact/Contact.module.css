@@ -1,10 +1,43 @@
-.listItem {
-  width: 100%;
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(63, 137, 202);
+  text-shadow: 2px 2px 8px #fff;
+  white-space: nowrap;
+}
+.button {
+  width: 100px;
+  height: 50px;
+
+  border: 2px solid rgb(63, 137, 202);
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: 500;
+
+  background-color: inherit;
+  color: rgb(63, 137, 202);
+  text-shadow: 2px 2px 8px #fff;
+  cursor: pointer;
+}
+.button:hover,
+.button:focus {
+  color: white;
+  background-color: rgb(63, 137, 202);
+  text-shadow: none;
+}
+.contact {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  align-items: center;
 }
-.listItemButton {
-  border-radius: 5px;
-  border: 1px solid black;
+.paragraph {
+  display: flex;
+  align-items: center;
 }

@@ -7,17 +7,19 @@ const Filter = () => {
   const dispatch = useDispatch();
   const handleFilterChange = filterValue => dispatch(setFilter(filterValue));
   return (
-    <label className={css.label}>
-      Find contacts by name:
-      <input
-        className={css.input}
-        type="text"
-        name="filter"
-        placeholder="Enter name"
-        value={filter}
-        onChange={evt => handleFilterChange(evt.currentTarget.value.trim())}
-      />
-    </label>
+    <div className={css.container}>
+      <label className={css.label}>
+        Find contacts by name:
+        <input
+          className={css.input}
+          type="text"
+          name="filter"
+          placeholder="Enter name"
+          value={filter}
+          onChange={evt => handleFilterChange(evt.currentTarget.value.trim())}
+        />
+      </label>
+    </div>
   );
 };
 

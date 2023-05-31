@@ -6,10 +6,14 @@ const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   return (
     <>
-      <li className={css.listItem} key={id}>
-        {name}: {number}
+      <li className={css.item} key={id}>
+        <div className={css.contact}>
+          <p className={css.paragraph}>{name}</p>
+          <p className={css.paragraph}>{number}</p>
+        </div>
+
         <button
-          className={css.listItemButton}
+          className={css.button}
           type="button"
           onClick={() => {
             dispatch(deleteContact(id));

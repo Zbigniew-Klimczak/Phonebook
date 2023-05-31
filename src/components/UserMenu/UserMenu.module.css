@@ -1,0 +1,37 @@
+.container {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+.link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 500;
+}
+.link:hover,
+.link:focus {
+  text-decoration: underline;
+}
+.email {
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+.button {
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(63, 137, 202);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button:hover,
+.button:focus {
+  color: rgb(63, 137, 202);
+  background-color: white;
+  text-shadow: none;
+}

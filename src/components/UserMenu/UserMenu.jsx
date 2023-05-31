@@ -7,10 +7,16 @@ const UserMenu = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <Link to="/contacts">Contacts</Link>
+    <div className={css.container}>
+      <Link className={css.link} to="/contacts">
+        Contacts
+      </Link>
       <p className={css.email}>{useAuth().user.email}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
+      <button
+        className={css.button}
+        type="button"
+        onClick={() => dispatch(logOut())}
+      >
         Logout
       </button>
     </div>

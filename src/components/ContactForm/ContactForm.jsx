@@ -28,10 +28,10 @@ const ContactForm = () => {
   return (
     <>
       <form className={css.form} onSubmit={handleSubmit}>
-        <label className={css.formLabel}>
+        <label className={css.label}>
           Name:
           <input
-            className={css.formInput}
+            className={css.input}
             type="text"
             name="name"
             placeholder="Enter name"
@@ -40,10 +40,10 @@ const ContactForm = () => {
             required
           />
         </label>
-        <label className={css.formLabel}>
+        <label className={css.label}>
           Number:
           <input
-            className={css.formInput}
+            className={css.input}
             type="tel"
             name="number"
             placeholder="Enter number"
@@ -52,7 +52,7 @@ const ContactForm = () => {
             required
           />
         </label>
-        <button className={css.formButton} type="submit">
+        <button className={css.button} type="submit">
           Add contact
         </button>
       </form>
