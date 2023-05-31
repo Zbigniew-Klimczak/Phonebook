@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 import { contactFilter } from 'utils/ContactFormFunc';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
-import { nanoid } from '@reduxjs/toolkit';
+
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
@@ -19,8 +19,7 @@ const ContactForm = () => {
       dispatch(
         addContact({
           name: name.trim(),
-          phone: number.trim(),
-          id: nanoid(),
+          number: number.trim(),
         })
       );
     }

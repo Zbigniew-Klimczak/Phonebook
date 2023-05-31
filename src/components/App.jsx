@@ -3,8 +3,8 @@ import { NotFoundPage } from 'pages/NotFoundPage';
 import { HomePage } from 'pages/HomePage';
 import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
-import { Routes, Route } from 'react-router-dom';
 import { WelcomePage } from 'pages/WelcomePage';
+import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks';
@@ -14,9 +14,11 @@ import { RestrictedRoute } from './RestrictedRoute';
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
@@ -46,7 +48,6 @@ export const App = () => {
           }
         />
       </Route>
-
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

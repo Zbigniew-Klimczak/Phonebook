@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MagnifyingGlass } from 'react-loader-spinner';
 import css from '../components/App.module.css';
-import UserMenu from 'components/UserMenu/UserMenu';
 export const ContactsPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
@@ -19,12 +18,12 @@ export const ContactsPage = () => {
     dispatch(fetchContactsItems());
   }, [dispatch]);
   return (
-    <main className={css.phonebook}>
+    <div className={css.phonebook}>
       <h1 className={css.phonebookTitle}>Phonebook</h1>
       <ContactForm></ContactForm>
       <h2 className={css.contactsTitle}>Contacts</h2>
       <Filter></Filter>
       {isLoading === true ? <MagnifyingGlass /> : <ContactList></ContactList>}
-    </main>
+    </div>
   );
 };

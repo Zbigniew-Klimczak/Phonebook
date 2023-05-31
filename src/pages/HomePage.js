@@ -1,10 +1,5 @@
-import Navigation from 'components/Navigation/Navigation';
-import { Outlet } from 'react-router-dom';
+import Home from 'components/Home/Home';
+
 export const HomePage = () => {
-  return (
-    <div>
-      <Navigation />
-      <Outlet />
-    </div>
-  );
+  return <Home />;
 };
