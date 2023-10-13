@@ -1,7 +1,7 @@
 import Contact from '../Contact/Contact';
 import { selectFilter } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-import css from './ContactList.module.css';
+
 import { selectContacts } from 'redux/selectors';
 import { filteredContacts } from 'utils/ContactListFunc';
 import { InfinitySpin } from 'react-loader-spinner';
@@ -13,11 +13,11 @@ const ContactList = () => {
   return (
     <>
       {isLoading === true ? (
-        <div className={css.spinner}>
+        <div>
           <InfinitySpin color="#3f89ca" />
         </div>
       ) : (
-        <ul className={css.list}>
+        <ul>
           {filteredContacts(contacts, filter).map(contact => (
             <Contact
               key={contact.id}

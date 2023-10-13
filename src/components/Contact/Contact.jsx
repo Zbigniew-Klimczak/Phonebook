@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
-import css from './Contact.module.css';
+
 import { deleteContact } from 'redux/operations';
 import { useDispatch } from 'react-redux';
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   return (
     <>
-      <li className={css.item} key={id}>
-        <div className={css.contact}>
-          <p className={css.paragraph}>{name}</p>
-          <p className={css.paragraph}>{number}</p>
+      <li key={id}>
+        <div>
+          <p>{name}</p>
+          <p>{number}</p>
         </div>
 
         <button
-          className={css.button}
           type="button"
           onClick={() => {
             dispatch(deleteContact(id));
