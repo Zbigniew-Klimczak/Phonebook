@@ -1,12 +1,19 @@
 import Navigation from 'components/Navigation/Navigation';
 import { Outlet } from 'react-router-dom';
 
+import { Grid } from '@mui/material';
+
 const Home = () => {
   return (
-    <div>
+    <Grid
+      container
+      direction="column"
+      justifyContent="flex-start"
+      alignItems="center"
+    >
       <Navigation />
       <Outlet />
-    </div>
+    </Grid>
   );
 };
 export default Home;
