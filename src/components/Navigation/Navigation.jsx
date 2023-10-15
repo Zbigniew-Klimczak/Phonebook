@@ -1,50 +1,23 @@
-import { Link as RouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from 'hooks';
 import UserMenu from 'components/UserMenu/UserMenu';
-import { AppBar, Toolbar, Link, Grid } from '@mui/material';
-
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <AppBar position="static">
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Link
-          variant="h4"
-          underline="none"
-          color="#fff"
-          component={RouterLink}
-          to="/"
-        >
-          Phonebook
-        </Link>
+    <div>
+      <h1>
+        <Link to="/">Phonebook</Link>
+      </h1>
+      {isLoggedIn ? (
+        <UserMenu />
+      ) : (
+        <div>
+          <Link to="/login">Log In</Link>
 
-        {isLoggedIn ? (
-          <UserMenu />
-        ) : (
-          <div>
-            <Link
-              variant="h6"
-              underline="none"
-              color="#fff"
-              component={RouterLink}
-              to="/login"
-            >
-              Log In
-            </Link>
-
-            <Link
-              variant="h6"
-              underline="none"
-              color="#fff"
-              component={RouterLink}
-              to="/register"
-            >
-              Register
-            </Link>
-          </div>
-        )}
-      </Toolbar>
-    </AppBar>
+          <Link to="/register">Register</Link>
+        </div>
+      )}
+    </div>
   );
 };
 export default Navigation;
