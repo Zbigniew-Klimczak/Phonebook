@@ -2,7 +2,7 @@ import Navigation from 'components/Navigation/Navigation';
 import { Outlet } from 'react-router-dom';
 import { useAuth } from 'hooks';
 
-import Container from 'react-bootstrap/container';
+import Container from 'react-bootstrap/Container';
 import { InfinitySpin } from 'react-loader-spinner';
 
 const Home = () => {
