@@ -1,5 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Stack from 'react-bootstrap/Stack';
+
 const Login = () => {
   const dispatch = useDispatch();
   const handleSubmit = e => {
@@ -14,17 +19,32 @@ const Login = () => {
     form.reset();
   };
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" autoComplete="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" autoComplete="off" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Stack gap={4}>
+        <Form.Group className="text-center">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            autoComplete="email"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="text-center">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Enter password"
+            name="password"
+            autoComplete="off"
+            required
+          />
+        </Form.Group>
+        <Button type="submit">Log In</Button>
+      </Stack>
+    </Form>
   );
 };
 export default Login;

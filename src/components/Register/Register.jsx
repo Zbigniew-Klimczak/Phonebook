@@ -1,5 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Stack from 'react-bootstrap/Stack';
+
 const Register = () => {
   const dispatch = useDispatch();
 
@@ -17,21 +22,42 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Username
-        <input type="text" name="name" autoComplete="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" autoComplete="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" autoComplete="off" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Stack gap={4}>
+        <Form.Group className="text-center">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="name"
+            placeholder="Enter name"
+            name="name"
+            autoComplete="name"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="text-center">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            autoComplete="email"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="text-center">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Enter password"
+            name="password"
+            autoComplete="off"
+            required
+          />
+        </Form.Group>
+        <Button type="submit">Register</Button>
+      </Stack>
+    </Form>
   );
 };
 export default Register;
